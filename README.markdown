@@ -197,7 +197,6 @@ If none of the above are set to true then the default output is pretty printed f
 
 ### JVM Settings ###
 * cucumberMaxMemory - The maximum JVM memory to allocate to the JVM process. Defaults to the string "256M"
-* cucumberMaxPermGen - The maximum PermGen space for the JVM process. Defaults to the string "64M"
 * cucumberSystemProperties - System properties to be passed to the JVM process using the -D flag. Defaults to and empty Map[String, String]
 * cucumberJVMOptions - Additional options to be passed to the JVM that runs cucumber. Defaults to an empty List[String]
 

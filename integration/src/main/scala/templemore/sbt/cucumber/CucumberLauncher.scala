@@ -1,5 +1,6 @@
 package templemore.sbt.cucumber
 
+import cucumber.api._
 import cucumber.runtime.io.ResourceLoader
 import cucumber.runtime.scala.ScalaBackend
 
@@ -65,7 +66,7 @@ class CucumberLauncher(debug: (String) => Unit, error: (String) => Unit) {
     val runtime = runtimeConstructor.newInstance(loader, classLoader, Seq(scalaBackend).asJava, options)
 
     CucumberRuntime(runtime, options, loader, 
-                    options.formatter(classLoader), options.reporter(classLoader), new SummaryPrinter(System.out))
+                    options.formatter(classLoader), options.reporter(classLoader), new DefaultSummaryPrinter())
   } catch {
     case e: Exception => 
       error("Unable to construct cucumber runtime. Please report this as an error. (Details: " + e.getMessage + ")")
